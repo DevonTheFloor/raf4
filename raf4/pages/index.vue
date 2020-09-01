@@ -1,28 +1,9 @@
 <template>
-  <div class="container">
+  <div class="container-fluid">
     <div>
       <Logo />
-      <h1 class="title">
-        raf4
-      </h1>
-      <div class="links">
-        <a
-          href="https://nuxtjs.org/"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="button--green"
-        >
-          Documentation
-        </a>
-        <a
-          href="https://github.com/nuxt/nuxt.js"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="button--grey"
-        >
-          GitHub
-        </a>
-      </div>
+      <Header />
+      <Footer />
     </div>
   </div>
 </template>
@@ -32,7 +13,7 @@ export default {}
 </script>
 
 <style>
-.container {
+.container-fluid {
   margin: 0 auto;
   min-height: 100vh;
   display: flex;
