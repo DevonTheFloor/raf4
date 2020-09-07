@@ -20,6 +20,15 @@ export default {
 }
 </script>
 
-<style lang="sass">
-
+<style>
+header{
+  background-color: darkgray;
+  border: 7px ridge silver;
+  position: fixed;
+  top: 2px;
+  z-index: 1;
+  width: 100%;
+  height: auto;
+  padding: 1%;
+}
 </style>

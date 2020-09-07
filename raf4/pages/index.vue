@@ -1,54 +1,41 @@
 <template>
   <div class="container-fluid">
     <div>
-      <Logo />
       <Header />
+
+      <Logo />
       <Footer />
     </div>
   </div>
 </template>
 
 <script>
-export default {}
+export default {
+  head: {
+    metaInfo: {
+      link: [
+        { rel: 'stylesheet', href: 'https://use.fontawesome.com/releases/v5.8.0/css/all.css' }
+      ]
+    }
+  }
+}
 </script>
 
 <style>
 .container-fluid {
   margin: 0 auto;
   min-height: 100vh;
-  display: flex;
+  background-image: url('~assets/img/fastn.jpeg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  /*display: flex;
   justify-content: center;
   align-items: center;
-  text-align: center;
+  text-align: center;*/
 }
-
-.title {
-  font-family:
-    'Quicksand',
-    'Source Sans Pro',
-    -apple-system,
-    BlinkMacSystemFont,
-    'Segoe UI',
-    Roboto,
-    'Helvetica Neue',
-    Arial,
-    sans-serif;
-  display: block;
-  font-weight: 300;
-  font-size: 100px;
-  color: #35495e;
-  letter-spacing: 1px;
-}
-
-.subtitle {
-  font-weight: 300;
-  font-size: 42px;
-  color: #526488;
-  word-spacing: 5px;
-  padding-bottom: 15px;
-}
-
-.links {
-  padding-top: 15px;
+img{
+  border: 1px solid black;
+  box-shadow: 8px 8px 8px 8px grey;
 }
 </style>
