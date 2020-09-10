@@ -10,13 +10,18 @@
       <a href="#" class="btn btn-primary btn-danger"><i class="fas fa-user-graduate"></i> EXAM</a>
     </div>
     <div class="col-3 col-sm-3 col-lg-3">
-      <a href="#" class="add btn btn-primary btn-success"><i class="fas fa-cloud-upload-alt"></i> AJOUT</a>
+      <a href="#" class="add btn btn-primary btn-success"><i class="fas fa-cloud-upload-alt" @click="addbar"></i> AJOUT</a>
     </div>
   </header>
 </template>
 
 <script>
 export default {
+  meyhods: {
+    addbar () {
+      this.seeform = true
+    }
+  }
 }
 </script>
 
@@ -30,5 +35,10 @@ header{
   width: 100%;
   height: auto;
   padding: 1%;
+  position: relative;
+  top: 0px;
+}
+.add > {
+  display: block;
 }
 </style>

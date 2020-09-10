@@ -63,11 +63,13 @@ export default {
 footer{
   background-color: darkgray;
   border: 5px ridge silver;
-  position: fixed;
+  /*position: fixed;
   bottom: 0px;
-  z-index: 1;
+  z-index: 1;*/
   width: 100%;
   height: auto;
+  position: relative;
+  bottom: 0px;
 }
 
 </style>

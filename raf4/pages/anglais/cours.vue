@@ -24,9 +24,5 @@ export default {
 </script>
 
 <style lang="scss">
-.photo{
-  width: 60%;
-  height: auto;
-  margin: 3%;
-}
+
 </style>

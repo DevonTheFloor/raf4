@@ -24,7 +24,5 @@ export default {
 </script>
 
 <style lang="scss">
-.diapo{
-  border: 5px solid rgb(194, 179, 179);
-}
+
 </style>

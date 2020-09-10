@@ -1,10 +1,13 @@
 <template>
   <div class="container-fluid">
     <Header />
-    <div class="diapo d-flex flex-column">
-      <div class="justify-content-center" v-for="photo in datas" :key="photo.id">
+    <Menu />
+    <div class="diapo col-lg-12">
+      <div v-for="photo in datas" :key="photo.id">
         <img class=" photo" :src="'https://school-task.herokuapp.com/UPIMG/'+photo.nom">
-        <p> {{ photo.com }} </p>
+        <p class="com">
+          {{ photo.com }}
+        </p>
       </div>
     </div>
     <Footer />
@@ -21,3 +24,7 @@ export default {
   }
 }
 </script>
+
+<style lang="scss">
+
+</style>

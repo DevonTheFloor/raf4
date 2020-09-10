@@ -1,34 +1,24 @@
 <template>
   <div class="container-fluid">
-    <button class="btn btn-primary btn-lg">
-      <i class="fas fa-bars"></i>
-    </button>
-    <div v-for="item in items" :key="item.id">
-      <ol>
-        <li> {{ item.message1 }} </li>
-        <li> {{ item.crotte }} </li>
-      </ol>
+    <Header />
+    <Form />
+    <div class="diapo col-lg-12">
+      <div v-for="photo in datas" :key="photo.id">
+        <img class=" photo" :src="'https://school-task.herokuapp.com/UPIMG/'+photo.nom">
+        <p class="com">
+          {{ photo.com }}
+        </p>
+      </div>
     </div>
-      <p>  coucou  </p>
     <Footer />
   </div>
 </template>
 <script>
 import axios from 'axios'
 export default {
-  data () {
-    return {
-      updata: '',
-      items: [
-        { message1: 'Foo' },
-        { message: 'Bar' },
-        { message: 'coucou' },
-        { crotte: 'salkut' }]
-    }
-  },
-  mounted () {
-    axios.get('https://school-task.herokuapp.com/nimp/')
-      .then(async (response) => { console.log(response.data); await (response.data = this.updata) })
+  asyncData () {
+    return axios.get('https://school-task.herokuapp.com/nimp/')
+      .then((response) => { return { datas: response.data } })
       .catch((error) => { console.log(error) })
   }
 }

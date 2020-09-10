@@ -1,0 +1,30 @@
+.diapo{
+  border: 10px solid rgb(194, 179, 179);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.com{
+  background-color: rgb(226, 210, 210);
+}
+.photo{
+  width: 60vw;
+  height: auto;
+  margin: 3%;
+}
+
+.container-fluid {
+  margin: 0 auto;
+  min-height: 100vh;
+  background-image: url('~assets/img/fastn.jpeg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  
+}
+img{
+  border: 1px solid black;
+  box-shadow: 8px 8px 8px 8px grey;
+}
