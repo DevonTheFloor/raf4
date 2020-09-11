@@ -1,5 +1,5 @@
 <template>
-  <aside v-show="seeform = true" class="send col-12 col-lg-3">
+  <aside class="send col-12 col-lg-3">
     <form action="/" method="post" enctype="multipart/form-data">
       <br><br>
       <input id="file" type="file" name="file" required="required">

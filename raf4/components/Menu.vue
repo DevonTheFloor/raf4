@@ -1,5 +1,5 @@
 <template>
-  <button class="menu btn btn-primary btn-lg" @click="tglbar">
+  <button @click="toglbar" class="menu btn btn-primary btn-lg">
     <i class="fas fa-bars"></i>
   </button>
 </template>
@@ -7,15 +7,15 @@
 <script>
 export default {
   methods: {
-    tglbar () {
-
+    toglbar () {
+      this.$nuxt.$emit('toggling')
     }
   }
 }
 </script>
 
 <style lang="scss" scoped>
-.menu{
+.menu {
   width: 50px;
   height: 50px;
   border-radius: 25px;

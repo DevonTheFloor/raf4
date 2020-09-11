@@ -1,6 +1,5 @@
 <template>
   <div class="container-fluid">
-    <Header />
     <Form />
     <div class="diapo col-lg-12">
       <div v-for="photo in datas" :key="photo.id">
@@ -10,7 +9,6 @@
         </p>
       </div>
     </div>
-    <Footer />
   </div>
 </template>
 <script>

@@ -1,10 +1,37 @@
 <template>
   <div>
+    <Header v-show="seenav" />
+    <Menu />
+    <Form />
     <Nuxt />
+    <Footer v-show="seenav" />
   </div>
 </template>
 
-<style>
+<script>
+
+export default {
+  data () {
+    return {
+      seenav: true
+    }
+  },
+  created () {
+    this.$nuxt.$on('toggling', () => {
+      if (this.seenav === true) {
+        this.seenav = false
+      } else {
+        this.seenav = true
+      }
+    })
+  }
+
+}
+</script>
+
+<style lang="scss">
+$baknav: rgb(209, 198, 198);
+$baknavbord: rgb(236, 221, 221);
 html {
   font-family:
     'Source Sans Pro',
@@ -24,39 +51,34 @@ html {
   box-sizing: border-box;
 }
 
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-  margin: 0;
+.diapo{
+  border: 10px solid rgb(194, 179, 179);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.com{
+  background-color: rgb(226, 210, 210);
+}
+.photo{
+  width: 60vw;
+  height: auto;
+  margin: 3%;
 }
 
-.button--green {
-  display: inline-block;
-  border-radius: 4px;
-  border: 1px solid #3b8070;
-  color: #3b8070;
-  text-decoration: none;
-  padding: 10px 30px;
+.container-fluid {
+  margin: 0 auto;
+  min-height: 100vh;
+  background-image: url('~assets/img/fastn.jpeg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
 }
 
-.button--green:hover {
-  color: #fff;
-  background-color: #3b8070;
-}
-
-.button--grey {
-  display: inline-block;
-  border-radius: 4px;
-  border: 1px solid #35495e;
-  color: #35495e;
-  text-decoration: none;
-  padding: 10px 30px;
-  margin-left: 15px;
-}
-
-.button--grey:hover {
-  color: #fff;
-  background-color: #35495e;
+img{
+  border: 1px solid black;
+  box-shadow: 8px 8px 8px 8px grey;
 }
 </style>
