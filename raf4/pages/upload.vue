@@ -1,16 +1,18 @@
 <template>
   <div class="container-fluid">
-    <Form />
-    <div class="diapo col-lg-12">
+    <div class="diapo">
       <div v-for="photo in datas" :key="photo.id">
-        <img class=" photo" :src="'https://school-task.herokuapp.com/UPIMG/'+photo.nom">
-        <p class="com">
-          {{ photo.com }}
-        </p>
+        <div class="cadre">
+          <Supprimer />
+          <Reup />
+          <img class="photo" :src="'https://school-task.herokuapp.com/UPIMG/'+photo.nom">
+          <p> {{ photo.com }} </p>
+        </div>
       </div>
     </div>
   </div>
 </template>
+
 <script>
 import axios from 'axios'
 export default {

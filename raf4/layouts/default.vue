@@ -2,7 +2,7 @@
   <div>
     <Header v-show="seenav" />
     <Menu />
-    <Form />
+    <Form v-show="seeform" />
     <Nuxt />
     <Footer v-show="seenav" />
   </div>
@@ -13,7 +13,8 @@
 export default {
   data () {
     return {
-      seenav: true
+      seenav: true,
+      seeform: false
     }
   },
   created () {
@@ -23,6 +24,12 @@ export default {
       } else {
         this.seenav = true
       }
+    })
+    this.$nuxt.$on('toggform', () => {
+      this.seeform = true
+    })
+    this.$nuxt.$on('untoggform', () => {
+      this.seeform = false
     })
   }
 
@@ -52,7 +59,6 @@ html {
 }
 
 .diapo{
-  border: 10px solid rgb(194, 179, 179);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -65,7 +71,6 @@ html {
 .photo{
   width: 60vw;
   height: auto;
-  margin: 3%;
 }
 
 .container-fluid {
@@ -79,6 +84,6 @@ html {
 
 img{
   border: 1px solid black;
-  box-shadow: 8px 8px 8px 8px grey;
+  box-shadow: 3px 3px 3px 3px grey;
 }
 </style>

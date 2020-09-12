@@ -53,7 +53,7 @@
 export default {
   methods: {
     annuler () {
-      this.seeform = false
+      this.$nuxt.$emit('untoggform')
     }
   }
 }
@@ -61,7 +61,6 @@ export default {
 
 <style lang="scss">
 .send{
-  display: none;
   text-align: center;
   background-color: rgb(162, 206, 245);
   opacity: 0.90;

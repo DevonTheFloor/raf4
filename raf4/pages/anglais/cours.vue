@@ -2,8 +2,12 @@
   <div class="container-fluid">
     <div class="diapo">
       <div v-for="photo in datas" :key="photo.id">
-        <img class="photo" :src="'https://school-task.herokuapp.com/UPIMG/'+photo.nom">
-        <p> {{ photo.com }} </p>
+        <div class="cadre">
+          <Supprimer />
+          <Reup />
+          <img class="photo" :src="'https://school-task.herokuapp.com/UPIMG/'+photo.nom">
+          <p> {{ photo.com }} </p>
+        </div>
       </div>
     </div>
   </div>
@@ -22,5 +26,9 @@ export default {
 </script>
 
 <style lang="scss">
-
+.cadre {
+  border: whitesmoke;
+  background-color: rgb(202, 201, 201);
+  border-radius: 10px;
+}
 </style>
