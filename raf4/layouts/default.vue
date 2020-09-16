@@ -14,7 +14,8 @@ export default {
   data () {
     return {
       seenav: true,
-      seeform: false
+      seeform: false,
+      URI: 'https://school-task.herokuapp.com'
     }
   },
   created () {

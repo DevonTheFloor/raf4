@@ -1,23 +1,29 @@
 <template>
-  <button class="supr" @click="effacer">
+  <button class="supr" @click="effaceur">
     X
   </button>
 </template>
 
 <script>
 export default {
+
   methods: {
-    effacer () {
-      alert('êtes vous sûr de vouloir effacer ce document ?')
+    effaceur () {
+      this.$nuxt.$emit('effaceur')
+      console.log('$emit effaceur')
     }
   }
 }
 </script>
+
 <style lang="scss" scoped>
 .supr{
   color: red;
   background-color: rgb(230, 135, 135);
   border: 1px solid red;
   border-radius: 3%;
+  &:active{
+    background-color: rgb(200, 75, 169);
+  }
 }
 </style>

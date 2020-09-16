@@ -1,0 +1,7 @@
+DELETE http://localhost:4444/del/5f53367dbade1200176c1be7
+
+
+###
+GET https://school-task.herokuapp.com/physique/
+
+###
