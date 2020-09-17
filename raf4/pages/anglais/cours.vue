@@ -6,6 +6,7 @@
           <Supprimer />
           <Reup />
           <img class="photo" :src="'https://school-task.herokuapp.com/UPIMG/'+photo.nom">
+          <p> {{ photo._id }} </p>
           <p> {{ photo.com }} </p>
         </div>
       </div>
@@ -16,11 +17,32 @@
 <script>
 import axios from 'axios'
 export default {
-  asyncData () {
-    return axios.get('https://school-task.herokuapp.com/eng/')
-      .then((response) => { console.log(response.data); return { datas: response.data } })
+  data () {
+    return {
+      datas: '',
+      photo: ''
+    }
+  },
+  created () {
+
+  },
+  mounted () {
+    this.$nuxt.$on('effaceur', () => {
+      console.log('photo._id : ', this.photo._id)
+      axios.delete('https://school-task.herokuapp.com/del/')
+        .then(() => { console.log('object deleted') })
+        .catch((error) => { console.log(error) })
+    })
+    axios.get('https://school-task.herokuapp.com/eng/')
+      .then((response) => { console.log(response.data); this.datas = response.data })
       .catch((error) => { console.log(error) })
-  }
+  },
+  methods: {
+    effacer () {
+
+    }
+  },
+  head: { title: 'Anglais' }
 }
 
 </script>

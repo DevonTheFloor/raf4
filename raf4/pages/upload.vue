@@ -17,14 +17,14 @@
 <script>
 import axios from 'axios'
 export default {
-  asyncData () {
+  asyncData (context) {
     return axios.get('https://school-task.herokuapp.com/nimp/')
       .then((response) => { return { datas: response.data } })
       .catch((error) => { console.log(error) })
   },
   created () {
     this.$nuxt.$on('effaceur', () => {
-      axios.delete('https://school-task.herokuapp.com/del/' + photo._ide)
+      axios.delete('https://school-task.herokuapp.com/del/')
         .then()
         .catch()
     })
