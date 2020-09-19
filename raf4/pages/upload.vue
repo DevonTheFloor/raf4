@@ -22,12 +22,20 @@ export default {
       .then((response) => { return { datas: response.data } })
       .catch((error) => { console.log(error) })
   },
+  data () {
+    return {
+      datas: ''
+    }
+  },
   created () {
     this.$nuxt.$on('effaceur', () => {
       axios.delete('https://school-task.herokuapp.com/del/')
         .then()
         .catch()
     })
+  },
+  head: {
+    title: 'Uploadage'
   }
 }
 </script>
