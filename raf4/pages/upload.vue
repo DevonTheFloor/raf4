@@ -3,8 +3,9 @@
     <div class="diapo">
       <div v-for="photo in datas" :key="photo.id">
         <div class="cadre">
-          <Supprimer />
-          <Reup />
+          <nuxt-link :to="'/voir/'+photo.nom" class="voir">
+            Voir
+          </nuxt-link>
           <img class="photo" :src="'https://school-task.herokuapp.com/UPIMG/'+photo.nom">
           <p> {{ photo._id }} </p>
           <p> {{ photo.com }} </p>

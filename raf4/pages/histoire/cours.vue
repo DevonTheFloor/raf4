@@ -16,21 +16,15 @@
 <script>
 import axios from 'axios'
 export default {
-  /* asyncData () {
+  asyncData () {
     return axios.get('https://school-task.herokuapp.com/histoire/')
-      .then((response) => { console.log(response.data); return { datas: response.data } })
-      .catch((error) => { console.log(error) })
-  } */
-  beforeCreate () {
-    axios.get('https://school-task.herokuapp.com/histoire/')
       .then((response) => {
         console.log(response.data)
-        this.datas = response.data
-        this.datas.forEach((photo) => {
-          console.log(photo._id)
-        })
+        return {
+          datas: response.data
+        }
       })
-      .catch(error => console.log(error))
+      .catch((error) => { console.log(error) })
   },
   mounted () {
     this.$nuxt.$on('effaceur', () => {

@@ -21,7 +21,7 @@ export default {
   color: red;
   background-color: rgb(230, 135, 135);
   border: 1px solid red;
-  border-radius: 3%;
+  border-radius: 6%;
   &:active{
     background-color: rgb(200, 75, 169);
   }

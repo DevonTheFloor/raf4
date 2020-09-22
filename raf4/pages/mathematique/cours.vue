@@ -15,6 +15,8 @@
 
 <script>
 import axios from 'axios'
+// import { mapActions } from 'vuex'
+
 export default {
   /* asyncData () {
     return axios.get('https://school-task.herokuapp.com/maths/')
@@ -22,7 +24,7 @@ export default {
       .catch((error) => { console.log(error) })
   } */
   beforeCreate () {
-    axios.get('https://school-task.herokuapp.com/maths/')
+    /* axios.get('https://school-task.herokuapp.com/maths/')
       .then((response) => {
         console.log(response.data)
         this.datas = response.data
@@ -30,9 +32,17 @@ export default {
           console.log(photo._id)
         })
       })
-      .catch(error => console.log(error))
+      .catch(error => console.log(error)) */
+  },
+  data () {
+    return {
+      datas: '',
+      listid: []
+    }
   },
   mounted () {
+    this.$store.dispatch('getmaths')
+    console.log('listId :', this.store.state.picture.listid)
     this.$nuxt.$on('effaceur', () => {
       axios.delete('https://school-task.herokuapp.com/del/', {
         id: this.photo._id

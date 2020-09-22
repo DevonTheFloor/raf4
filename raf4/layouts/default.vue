@@ -15,7 +15,8 @@ export default {
     return {
       seenav: true,
       seeform: false,
-      URI: 'https://school-task.herokuapp.com'
+      URI: 'https://school-task.herokuapp.com',
+      listId: []
     }
   },
   created () {
@@ -86,5 +87,14 @@ html {
 img{
   border: 1px solid black;
   box-shadow: 3px 3px 3px 3px grey;
+}
+
+.voir {
+  border: 1px solid blue;
+  border-radius: 5px;
+  background-color: rgb(127, 127, 230);
+  &:hover{
+    background-color: rgb(97, 97, 151);
+  }
 }
 </style>
