@@ -3,8 +3,9 @@
     <div class="diapo">
       <div v-for="photo in datas" :key="photo.id">
         <div class="cadre">
-          <Supprimer />
-          <Reup />
+          <nuxt-link :to="'/voir/'+photo.nom" class="voir">
+            Voir
+          </nuxt-link>
           <img class="photo" :src="'https://school-task.herokuapp.com/UPIMG/'+photo.nom">
           <p> {{ photo.com }} </p>
         </div>
@@ -18,9 +19,16 @@ import axios from 'axios'
 export default {
   asyncData () {
     return axios.get('https://school-task.herokuapp.com/french/')
-      .then((response) => { console.log(response.data); return { datas: response.data } })
+      .then((response) => {
+        return { datas: response.data }
+      })
       .catch((error) => { console.log(error) })
-  }
+  },
+  mouted () {
+    const util = location.href
+    sessionStorage.setItem('stockPath', util)
+  },
+  head: { title: 'Français' }
 }
 
 </script>

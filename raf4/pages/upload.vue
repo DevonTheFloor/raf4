@@ -29,11 +29,16 @@ export default {
     }
   },
   created () {
-    this.$nuxt.$on('effaceur', () => {
-      axios.delete('https://school-task.herokuapp.com/del/')
-        .then()
-        .catch()
-    })
+
+  },
+  mounted () {
+    const util = location.href
+    sessionStorage.setItem('stockPath', util)
+  },
+  methods: {
+    loadBack () {
+
+    }
   },
   head: {
     title: 'Uploadage'

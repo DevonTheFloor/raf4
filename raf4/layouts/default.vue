@@ -13,18 +13,17 @@
 export default {
   data () {
     return {
-      seenav: true,
+      seenav: false,
       seeform: false,
-      URI: 'https://school-task.herokuapp.com',
-      listId: []
+      API: 'https://school-task.herokuapp.com'
     }
   },
   created () {
     this.$nuxt.$on('toggling', () => {
-      if (this.seenav === true) {
-        this.seenav = false
-      } else {
+      if (this.seenav === false) {
         this.seenav = true
+      } else {
+        this.seenav = false
       }
     })
     this.$nuxt.$on('toggform', () => {
@@ -91,6 +90,7 @@ img{
 
 .voir {
   border: 1px solid blue;
+  color: whitesmoke;
   border-radius: 5px;
   background-color: rgb(127, 127, 230);
   &:hover{

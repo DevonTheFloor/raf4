@@ -3,10 +3,10 @@
     <div class="diapo">
       <div v-for="photo in datas" :key="photo.id">
         <div class="cadre">
-          <Supprimer />
-          <Reup />
+          <nuxt-link :to="'/voir/'+photo.nom" class="voir">
+            Voir
+          </nuxt-link>
           <img class="photo" :src="'https://school-task.herokuapp.com/UPIMG/'+photo.nom">
-          <p> {{ photo._id }} </p>
           <p> {{ photo.com }} </p>
         </div>
       </div>
@@ -16,35 +16,18 @@
 
 <script>
 import axios from 'axios'
-export default {
-  data () {
-    return {
-      datas: '',
-      listId: []
-    }
-  },
-  created () {
 
+export default {
+  asyncData () {
+    return axios.get('https://school-task.herokuapp.com/eng/')
+      .then((response) => {
+        return { datas: response.data }
+      })
+      .catch((error) => { console.log(error) })
   },
   mounted () {
-    axios.get('https://school-task.herokuapp.com/eng/')
-      .then((response) => {
-        console.log(response.data)
-        this.datas = response.data
-        this.datas.forEach((photo) => {
-          console.log(photo._id)
-          return this.fotoid
-        })
-      })
-      .catch(error => console.log(error))
-    this.$nuxt.$on('effaceur', () => {
-      console.log(this.fotoid)
-      axios.delete('https://school-task.herokuapp.com/del/' + this.fotoid)
-        .then(() => console.log('object deleted'))
-        .catch(error => console.log(error))
-    })
-  },
-  methods: {
+    const util = location.href
+    sessionStorage.setItem('stockPath', util)
   },
   head: { title: 'Anglais' }
 }

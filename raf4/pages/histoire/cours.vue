@@ -3,8 +3,9 @@
     <div class="diapo">
       <div v-for="photo in datas" :key="photo.id">
         <div class="cadre">
-          <Supprimer />
-          <Reup />
+          <nuxt-link :to="'/voir/'+photo.nom" class="voir">
+            Voir
+          </nuxt-link>
           <img class="photo" :src="'https://school-task.herokuapp.com/UPIMG/'+photo.nom">
           <p> {{ photo.com }} </p>
         </div>
@@ -27,13 +28,8 @@ export default {
       .catch((error) => { console.log(error) })
   },
   mounted () {
-    this.$nuxt.$on('effaceur', () => {
-      axios.delete('https://school-task.herokuapp.com/del/', {
-        id: this.photo._id
-      })
-        .then(() => console.log('object deleted'))
-        .catch(error => console.log(error))
-    })
+    const util = location.href
+    sessionStorage.setItem('stockPath', util)
   },
   head: {
     title: 'Histoire'

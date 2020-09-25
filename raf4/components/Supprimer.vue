@@ -1,6 +1,6 @@
 <template>
   <button class="supr" @click="effaceur">
-    X
+    Supprimer
   </button>
 </template>
 
@@ -21,7 +21,7 @@ export default {
   color: red;
   background-color: rgb(230, 135, 135);
   border: 1px solid red;
-  border-radius: 6%;
+  border-radius: 10px;
   &:active{
     background-color: rgb(200, 75, 169);
   }
