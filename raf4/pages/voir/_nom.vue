@@ -15,14 +15,13 @@ export default {
   data () {
     return {
       nom: this.$route.params.nom,
-      urimg: 'https://school-task.herokuapp.com/UPIMG/'
+      urimg: 'https://apiperso.herokuapp.com/UPIMG/'
     }
   },
-  computed: {
-  },
+
   created () {
     this.$nuxt.$on('effaceur', () => {
-      axios.delete('https://school-task.herokuapp.com/del/' + this.nom)
+      axios.delete('https://apiperso.herokuapp.com/del/' + this.nom)
         .then(statut => console.log(statut.message))
         .then(this.backing())
         .catch(error => console.log(error))

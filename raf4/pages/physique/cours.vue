@@ -6,7 +6,7 @@
           <nuxt-link :to="'/voir/'+photo.nom" class="voir">
             Voir
           </nuxt-link>
-          <img class="photo" :src="'https://school-task.herokuapp.com/UPIMG/'+photo.nom">
+          <img class="photo" :src="'https://apiperso.herokuapp.com/UPIMG/'+photo.nom">
           <p> {{ photo.com }} </p>
         </div>
       </div>
@@ -16,9 +16,10 @@
 
 <script>
 import axios from 'axios'
+
 export default {
   asyncData () {
-    return axios.get('https://school-task.herokuapp.com/physique/')
+    return axios.get('https://apiperso.herokuapp.com/physique/')
       .then((response) => {
         return { datas: response.data }
       })
