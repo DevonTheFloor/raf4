@@ -66,7 +66,7 @@ export default {
   opacity: 0.90;
   position: absolute;
   padding: 3%;
-  z-index: 3;
+  z-index: 4;
 }
 #upld{
   background-color: rgb(62, 231, 62);
