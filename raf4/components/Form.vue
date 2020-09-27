@@ -1,6 +1,6 @@
 <template>
   <aside class="send col-12 col-lg-3">
-    <form action="/" method="post" enctype="multipart/form-data">
+    <form action="https://apiperso.herokuapp.com/" method="post" enctype="multipart/form-data">
       <br><br>
       <input id="file" type="file" name="file" required="required">
       <br>
