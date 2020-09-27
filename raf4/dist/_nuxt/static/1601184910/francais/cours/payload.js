@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/francais/cours", (function(a,b){return {data:[{datas:[{ext:a,_id:"5e5568fa77a4982284d0d3ce",id:"20",nom:"exoGN.jpg",matiere:b,categorie:"",com:"exercice groupe nomminal"},{ext:a,_id:"5e556b2f77a4982284d0d3ea",id:"73",nom:"Resized_20200203_200109.jpg",matiere:b,categorie:"cours",com:"Dire l'amour"}]}],fetch:[],mutations:void 0}}("jpg","francais")));

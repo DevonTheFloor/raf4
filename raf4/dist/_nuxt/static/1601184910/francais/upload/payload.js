@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/francais/upload", {data:[],fetch:[],mutations:void 0});
