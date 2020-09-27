@@ -34,7 +34,7 @@ header{
   position: fixed;
   top: 0px;
   padding: 0.5%;
-  z-index: 3;
+  z-index: 1;
   width: 100vw;
   height: auto;
 }

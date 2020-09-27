@@ -67,7 +67,7 @@ footer{
   border: 5px ridge rgb(236, 221, 221);
   position: fixed;
   bottom: 0px;
-  z-index: 3;
+  z-index: 1;
   width: 100vw;
   height: auto;
   bottom: 0px;
